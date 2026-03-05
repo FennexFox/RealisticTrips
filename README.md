@@ -52,47 +52,6 @@ NightShift/
 | `Time2WorkStudentSystem` | `StudentSystem` | Per-level school schedules with vacation support |
 | `SpecialEventSystem` | — | Generates events at attractions, biases pathfinding |
 
-## Building
-
-### Prerequisites
-
-- **Visual Studio 2022** (or compatible MSBuild toolchain)
-- **.NET Framework 4.8** targeting pack
-- **Node.js ≥ 18** and **npm** (for UI build)
-- **Cities: Skylines II** installed (for game assembly references)
-
-### Build Steps
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/FennexFox/RealisticTrips.git
-   ```
-
-2. Update the game assembly path in `NightShift/Time2Work.csproj` if your game is not installed at the default Steam location:
-   ```xml
-   <GamePath>C:\Program Files (x86)\Steam\steamapps\common\Cities Skylines II\Cities2_Data\Managed</GamePath>
-   ```
-
-3. Install UI dependencies:
-   ```bash
-   cd NightShift/Time2WorkUI
-   npm install
-   ```
-
-4. Build the solution:
-   ```bash
-   dotnet build Time2Work.sln
-   ```
-   This builds the C# DLL and automatically runs `npm run build` for the UI.
-
-### Development
-
-For UI hot-reload during development:
-```bash
-cd NightShift/Time2WorkUI
-npm run dev
-```
-
 ## Configuration
 
 The mod exposes extensive settings through the in-game options menu, including:
@@ -104,7 +63,3 @@ The mod exposes extensive settings through the in-game options menu, including:
 - Time speed factor
 - Special event frequency
 - Tourism parameters
-
-## License
-
-See repository for license information.
