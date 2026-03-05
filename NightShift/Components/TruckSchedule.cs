@@ -15,7 +15,7 @@ namespace Time2Work.Components
         public float startTime; // normalized 0.0 to 1.0
         public float endTime;   // normalized 0.0 to 1.0
 
-        // Factory method to create a CitizenSchedule with default values
+        // Factory method to create a TruckSchedule with default values
         public static TruckSchedule CreateDefault()
         {
             return new TruckSchedule

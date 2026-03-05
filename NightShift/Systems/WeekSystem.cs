@@ -241,23 +241,23 @@ namespace Time2Work.Systems
             {
                 int dow = ((dayOfYear + 12 * (year - 1953)) % 7);
                 dayOfWeekTemp = (DayOfWeek)dow;
-                if (Mod.m_Setting.dt_simulation.Equals(Setting.DTSimulationEnum.AverageDay))
+                if (!Mod.m_Setting.dt_simulation.Equals(Setting.DTSimulationEnum.sevendayweek))
                 {
-                    dayOfWeekTemp = DayOfWeek.Friday;
                     if (Mod.m_Setting.dt_simulation.Equals(Setting.DTSimulationEnum.Weekday))
                     {
                         dayOfWeekTemp = DayOfWeek.Monday;
                     }
+                    else if (Mod.m_Setting.dt_simulation.Equals(Setting.DTSimulationEnum.Saturday))
+                    {
+                        dayOfWeekTemp = DayOfWeek.Saturday;
+                    }
+                    else if (Mod.m_Setting.dt_simulation.Equals(Setting.DTSimulationEnum.Sunday))
+                    {
+                        dayOfWeekTemp = DayOfWeek.Sunday;
+                    }
                     else
                     {
-                        if (Mod.m_Setting.dt_simulation.Equals(Setting.DTSimulationEnum.Saturday))
-                        {
-                            dayOfWeekTemp = DayOfWeek.Saturday;
-                        }
-                        else if (Mod.m_Setting.dt_simulation.Equals(Setting.DTSimulationEnum.Sunday))
-                        {
-                            dayOfWeekTemp = DayOfWeek.Sunday;
-                        }
+                        dayOfWeekTemp = DayOfWeek.Friday;
                     }
                 }
                 updated = true;
