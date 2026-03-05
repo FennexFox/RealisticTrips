@@ -18,7 +18,7 @@ namespace Time2Work.Utils
                 v = 2.0 * r.NextDouble() - 1.0;
                 S = u * u + v * v;
             }
-            while (S >= 1.0);
+            while (S >= 1.0 || S == 0.0);
 
             double fac = Math.Sqrt(-2.0 * Math.Log(S) / S);
             return u * fac;

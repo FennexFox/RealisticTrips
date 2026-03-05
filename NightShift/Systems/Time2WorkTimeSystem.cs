@@ -42,7 +42,7 @@ namespace Time2Work
             if(Mod.m_Setting.slow_time_factor != 1f)
             {
                 timeReductionFactor = Mod.m_Setting.slow_time_factor;
-                kTicksPerDay = (int)Math.Floor(timeReductionFactor * TimeSystem.kTicksPerDay);
+                kTicksPerDay = Math.Max(1, (int)Math.Floor(timeReductionFactor * TimeSystem.kTicksPerDay));
             } else
             {
                 kTicksPerDay = TimeSystem.kTicksPerDay;
@@ -203,7 +203,7 @@ namespace Time2Work
             if (Mod.m_Setting.slow_time_factor != 1f)
             {
                 timeReductionFactor = Mod.m_Setting.slow_time_factor;
-                kTicksPerDay = (int)Math.Floor(timeReductionFactor * TimeSystem.kTicksPerDay);
+                kTicksPerDay = Math.Max(1, (int)Math.Floor(timeReductionFactor * TimeSystem.kTicksPerDay));
             }
             else
             {
